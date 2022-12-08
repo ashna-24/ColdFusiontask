@@ -4,12 +4,12 @@
             <cfset data = form.textinput>
             <cfset arr = rematch("[\d]+",data)>
             <cfloop array="#arr#" index="i">
-                <cfif (#i# % 3) eq 0>
+                <cfif (i % 3) eq 0>
                     <cfoutput>
                         #i#
                     </cfoutput>
                     <cfcontinue>                    
-                </cfif>                
+                </cfif>                                
             </cfloop>
        </cfif>
     </cffunction>

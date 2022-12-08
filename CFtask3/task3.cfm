@@ -7,13 +7,15 @@
         <title>Form</title>
     </head>
     <body>
-        <cfoutput>
+        <cfoutput>            
             <div class="main">
-                <form action="components/task3.cfc?method=divisible" method="post" class="forminput">                
+                <form action="task3.cfm" method="post" class="forminput">                
                     <input type="text" name="textinput" id="textbox">
                     <input type="submit" value="Submit" id="submit" name="submit">
+                    <cfinvoke  method="divisible" component="components/task3" returnVariable="arrval">
                 </form>               
             </div>
+           <!---  #arrval# --->
         </cfoutput>
     </body>
 </html>

@@ -3,7 +3,7 @@
         <cfif structKeyExists(form, 'submit')>
             <cfset child= form.date>
             <cfset Mom=form.mother>
-            <cfif "#child#" lte "#Mom#">
+            <cfif child lte Mom>
                 Invalid! 
                 <cfelse>
                     <cfset datefrmt= dateFormat("#now()#", "yyyy")> 
@@ -17,12 +17,12 @@
                     <cfset nD = dateFormat("#now()#", "dd")>
                     <cfset age = #datefrmt# - #Userfrmt#>
                     <cfset MomAge=  #Userfrmt# - #Momfrmt#>
-                    <cfif #m# eq #nM# && #nD# lte #d# || #m# gt #nM#>
+                    <cfif m eq nM && nD lte d || m gt nM>
                         <cfset dateUp = #datefrmt#>
                         <cfelse>
                             <cfset dateUp = #datefrmt# + 1>
                     </cfif>
-                    <cfif #mM# eq #nM# && #nD# lte #dM# || #mM# gt #nM#>
+                    <cfif mM eq nM && nD lte dM || mM gt nM>
                         <cfset dateUpM = #datefrmt#>
                         <cfelse>
                             <cfset dateUpM = #datefrmt# + 1>

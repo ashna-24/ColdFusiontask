@@ -1,5 +1,6 @@
 <cfcomponent>
     <cffunction name="getOutput"  access="remote">
+        <cfset multiplyValues = createObject("component","components/task15")>
         <cffunction name="mulitiply">
             <cfargument name="w" required="yes">
             <cfargument name="x" required="yes">
