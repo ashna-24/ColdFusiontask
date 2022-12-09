@@ -1,7 +1,7 @@
 <cfcomponent>
     <cffunction name="makeRandomString" returnType="string" output="false">
-	    <cfset var chars = "23456789ABCDEFGHJKMNPQRS">
-	    <cfset var length = randRange(4,7)>
+	    <cfset var chars = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+	    <cfset var length = randRange(6,6)>
 	    <cfset var result = "">
 	    <cfset var i = "">
 	    <cfset var char = "">
@@ -16,8 +16,12 @@
     <cffunction name="getCaptcha" access="remote">
         <cfif structKeyExists(form, 'submit')>
             <cfset variable = form.captcha>
-            <cfif captch eq variable>
+            <cfset captch = makeRandomString()>
+            <cfset hidvar = form.captchatext>
+            <cfif hidvar eq variable>
                 <cfreturn "Email Address successfully subscribe our newsletter!">
+            <cfelse>
+                <cfreturn "Invalid captcha!">
             </cfif>
         </cfif>
     </cffunction>
